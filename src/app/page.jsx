@@ -1,14 +1,30 @@
+"use client"
+import TypingEffect from '@/components/TypingEffect';
 import styles from './page.module.css';
 import Image from 'next/image';
+import AOS from 'aos';
+import { useEffect } from 'react';
+import "aos/dist/aos.css"
 
 export default function Home() {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true
+    })
+  },[])
+
   return (
     <>
       <header>
-        <h1 className={styles.title}>Neon Ventura</h1>
+        <h1 className={styles.title}>
+          <TypingEffect />
+        </h1>
         <div className={styles.about_me}>
           <Image className={styles.profile_img} src={'/profile-me.jpeg'} height={180} width={180} />
-          <div className={styles.text}>
+          <div data-aos="fade-right" className={styles.text}>
             <p className={styles.p_about}>
               Olá! <br /> Meu nome é <p className={styles.strong}>Neon Ventura</p>, sou um desenvolvedor apaixonado por tecnologia e inovação.
             </p>
@@ -18,7 +34,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className={styles.contact}>
+        <div data-aos="fade-up" className={styles.contact}>
           <h2 className={styles.information_title}>Contato</h2>
           <div className={styles.social_media}>
             <Image src={'/social/social.png'} height={30} width={30} />
@@ -34,7 +50,7 @@ export default function Home() {
 
         <div className={styles.skills}>
           <h2 className={styles.information_title}>Habilidades Técnicas</h2>
-          <div className={styles.technical_img}>
+          <div data-aos="fade-up" className={styles.technical_img}>
             <div>
               <Image className={styles.skill_img} src={"/skills/react.webp"} height={80} width={80} />
               <Image className={styles.skill_img} src={"/skills/nextjs.svg"} height={80} width={80} />
@@ -47,14 +63,38 @@ export default function Home() {
             </div>
           </div>
 
-          <div className={styles.soft_skills}>
+          <div data-aos="fade-up" className={styles.soft_skills}>
             <h2 className={styles.information_title}>Soft Skills</h2>
-            <p>Resolução de Problemas</p>
-            <p>Trabalho em Equipe</p>
-            <p>Comunicação Eficaz</p>
-            <p>Autodidatismo</p>
+            <p className={styles.p_soft}>Resolução de Problemas</p>
+            <p className={styles.p_soft}>Trabalho em Equipe</p>
+            <p className={styles.p_soft}>Comunicação Eficaz</p>
+            <p className={styles.p_soft}>Autodidatismo</p>
           </div>
+
+          <div data-aos="fade-up" className={styles.languages}>
+            <h2 className={styles.information_title}>Idiomas</h2>
+            <p className={styles.p_languages}>Português - Nativo</p>
+            <p className={styles.p_languages}>Inglês - Pré Intermediario</p>
+          </div>
+
         </div>
+          <div className={styles.projects}>
+            <h2 className={styles.information_title}>Projetos</h2>
+            <div className={styles.cards_group}>
+                <a data-aos="zoom-out" href="https://construcy.vercel.app/">
+                  <div className={styles.card}>
+                    <Image src={"/projects/construcy.png"} height={460} width={250}/>
+                    <p className={styles.p_card}>Construtora Construcy <br />(PC / Mobile)</p>
+                  </div>
+                </a>
+                <a data-aos="zoom-out" href="https://flor-de-jua.vercel.app/">
+                  <div className={styles.card}>
+                    <Image src={"/projects/flor.png"} height={460} width={250}/>
+                    <p className={styles.p_card}>Restaurante Flor de juá <br /> (Mobile)</p>
+                  </div>
+                </a>
+            </div>
+          </div>
       </header>
     </>
   );

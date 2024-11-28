@@ -91,3 +91,50 @@
   border: 1px solid rgba(255, 255, 255, 0.248);
   box-shadow: 2px 2px rgba(0, 0, 0, 0.21);
 }
+
+.p_soft {
+  font-family: "Poppins";
+  color: #fff;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.3em;
+}
+
+.languages {
+  padding-bottom: 50px;
+}
+
+.p_languages {
+  font-family: "Poppins";
+  color: #fff;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.3em;
+}
+
+.projects {
+  background-color: #18192D;
+}
+
+.cards_group{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card{
+  margin-bottom: 50px;
+  transition: transform 1s ease;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.p_card {
+  font-family: "Poopins", sans-serif;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+}
